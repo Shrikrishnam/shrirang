@@ -1,0 +1,28 @@
+<div class="row">
+  <div class='col-1'>
+<div class="logo">
+  <img src='assets/images/fitness_logo.png' width="100px" height="50px" style="opacity: 1;"/>
+</div>
+</div>
+<div class='col-11'>
+<nav class=" navbar navbar-dark bg-dark navbar_class">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button (click)="landingpage()">Home</button>
+      <button (click)="placeAppointment()">Place Appointment</button>
+      <button (click)="viewAppointment()">View Appointment</button>
+      <button (click)="contactUspage()">Contact Us</button>    
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+<div class="col-7">
+<div class="sidebar">
+  <button (click)="landingpage()">Home</button><br>
+  <button (click)="placeAppointment()">Place Appointment</button><br>
+  <button (click)="viewAppointment()">View Appointment</button><br>
+  <button (click)="contactUspage()">Contact Us</button>
+</div>
+</div>
+<router-outlet></router-outlet>

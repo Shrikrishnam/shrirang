@@ -1,0 +1,61 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.logo{
+    margin-left: 0;
+    margin-top: 0;
+}
+.navbar_class{
+    margin-left:-25px;
+    margin-top: 0px;
+    overflow:fixed;
+}
+.sidebar {
+    width: 20%;
+    overflow: auto;
+    float: left;
+    height: 100%;
+  }
+  .sidebar .a {
+    margin-bottom: 20px;
+  }
+  .introtext {
+    text-align: justify;
+    margin-left: 10px;
+  }
+  ul {
+    list-style-type: none;
+  }
+  
+  td th {
+    text-align: center;
+  }
+  @media screen and (max-width: 700px) {
+    .sidebar {
+      width: 30%;
+      position: relative;
+    }
+    .sidebar a {
+      float: left;
+      text-align: left;
+    }
+  }
+  .wrap {
+    margin-left: 10px;
+    width: 75%;
+    overflow: hidden;
+  }
+  #wrap {
+    height: 100%;
+  }
+  .nav-i {
+    margin-right: 5px;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }

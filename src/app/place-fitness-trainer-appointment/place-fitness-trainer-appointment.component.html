@@ -1,0 +1,278 @@
+<div style="padding-right:15px;" class="container">
+
+    <!-- form header -->
+    <div class="row">
+        <div class="col">
+            <h1>Place Appointment</h1>
+            <hr>
+        </div>
+    </div>
+
+    <!-- main form -->
+    <div class="row">
+        <form action="" style="width:100%;" [formGroup]="fitnessForm">
+            <div class="col">
+
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="fnText">First Name</label>
+                                            <input type="text" [ngClass]="{'form-control': true,
+                                                  'is-invalid': !firstname.valid && firstname.touched,
+                                                  'is-valid': firstname.valid}" formControlName="firstname" id="fnText" placeholder="Enter first name" autofocus>
+                                            <small *ngIf="firstname.errors?.required && firstname.touched" id="fnHelp"
+                                                class="form-text custom-invalid-feedback">Field is required</small>
+                                            <small *ngIf="firstname.errors?.minlength && firstname.touched" id="fnHelp"
+                                                class="form-text custom-invalid-feedback">First Name should be atleast 2 characters.</small>
+                                            <small *ngIf="firstname.errors?.pattern && firstname.touched" id="fnHelp"
+                                                class="form-text custom-invalid-feedback">Only Alphabets are allowed.</small> </div>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="lnText">Last Name</label>
+                                            <input type="text" [ngClass]="{'form-control': true,
+                                                  'is-invalid': !lastname.valid && lastname.touched,
+                                                  'is-valid': lastname.valid}" formControlName="lastname" id="lnText" placeholder="Enter last name">
+                                            <small id="fnHelp" *ngIf="lastname.errors?.required && lastname.touched"
+                                                class="form-text custom-invalid-feedback">Field is required</small>
+                                            <small id="fnHelp" *ngIf="lastname.errors?.minlength && lastname.touched"
+                                                class="form-text custom-invalid-feedback">Last Name should be atleast 2 characters.</small>
+                                            <small id="fnHelp" *ngIf="lastname.errors?.pattern && lastname.touched"
+                                                class="form-text custom-invalid-feedback">Only Alphabets are allowed.</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label for="emailText">Email</label>
+                                    <input type="text" [ngClass]="{'form-control': true,
+                                                                          'is-invalid': !email.valid && email.touched,
+                                                                          'is-valid': email.valid}" formControlName="email" id="lnText"
+                                        placeholder="Enter email">
+                                    <small id="emailHelp" *ngIf="email.errors?.required && email.touched"
+                                        class="form-text custom-invalid-feedback">Field is required</small>
+                                    <small id="emailHelp" *ngIf="email.errors?.pattern && email.touched"
+                                        class="form-text custom-invalid-feedback">Include @,. in your mail id</small>
+                                </div>
+                            </div>
+                        </div>
+
+              
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="phnText">Phone Number:</label>
+                                                    <input type="text" [ngClass]="{'form-control': true,
+                                                                                                                      'is-invalid': !phonenumber.valid && phonenumber.touched,
+                                                                                                                      'is-valid': phonenumber.valid}"
+                                                        formControlName="phonenumber" id="phnText" placeholder="Enter Phone Number">
+                                                    <small *ngIf="phonenumber.errors?.required && phonenumber.touched" id="phnHelp"
+                                                        class="form-text custom-invalid-feedback">Field is required</small>
+                                                    <small *ngIf="phonenumber.errors?.maxlength && phonenumber.touched &&phonenumber.dirty " id="phnHelp"
+                                                        class="form-text custom-invalid-feedback">Maximum 10 digits are allowed.</small>
+                                                    <small *ngIf="phonenumber.errors?.pattern && phonenumber.touched" id="phnHelp"
+                                                        class="form-text custom-invalid-feedback">Should only be numeric.</small></div>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <label for="ageText">Age:</label>
+                                                    <input type="number" [ngClass]="{'form-control': true,
+                                                                                                                      'is-invalid': !age.valid && age.touched,
+                                                                                                                      'is-valid': age.valid}"
+                                                        formControlName="age" id="ageText" placeholder="Enter Age">
+                                                    <small *ngIf="age.errors?.required && age.touched" id="ageHelp"
+                                                        class="form-text custom-invalid-feedback">Field is required</small>
+                                                    <small *ngIf="age.errors?.maxlength && age.touched && age.dirty " id="ageHelp"
+                                                        class="form-text custom-invalid-feedback">Maximum 2 digits are allowed.</small>
+                                                    <small *ngIf="age.errors?.age_error && age.touched" id="ageHelp" class="form-text custom-invalid-feedback">Age
+                                                        amount must allow numbers greater than 18 and less than 60 only.</small></div>
+                                            </div>
+                                        </div>
+
+
+
+  <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row">
+                                    <div class="col">
+                                        <div class="form-group">
+                                            <label for="streetaddressText">Street Address:</label>
+                                            <input type="text"
+                                                [ngClass]="{'form-control': true,
+                                                'is-invalid': !streetaddress.valid && streetaddress.touched,
+                                                'is-valid': streetaddress.valid}"
+                                                formControlName="streetaddress" id="streetaddressText" placeholder="Enter Street Address">
+                                            <small *ngIf="streetaddress.errors?.required && streetaddress.touched" id="streetaddressHelp"
+                                                class="form-text custom-invalid-feedback">Field is required</small>
+                                            </div>
+                                </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <hr>
+                        </div>
+                    </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="cityText">City:</label>
+                            <input type="text"
+                                [ngClass]="{'form-control': true,
+                                'is-invalid': !city.valid && city.touched,
+                                'is-valid': city.valid}"
+                                formControlName="city" id="cityText" placeholder="Enter City">
+                            <small *ngIf="city.errors?.required && city.touched" id="cityHelp"
+                                class="form-text custom-invalid-feedback">Field is required</small>
+                        </div>
+                        </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="stateText">State:</label>
+                            <input type="text"
+                                [ngClass]="{'form-control': true,
+                                'is-invalid': !state.valid && state.touched,
+                                'is-valid': state.valid}"
+                                formControlName="state" id="stateText" placeholder="Enter State">
+                            <small *ngIf="state.errors?.required && state.touched" id="stateHelp"
+                                class="form-text custom-invalid-feedback">Field is required</small>
+                        </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="countryText">Country:</label>
+                                <input type="text"
+                                    [ngClass]="{'form-control': true,
+                                    'is-invalid': !country.valid && country.touched,
+                                    'is-valid': country.valid}"
+                                    formControlName="country" id="countryText" placeholder="Enter Country">
+                                <small *ngIf="country.errors?.required && country.touched" id="countryHelp"
+                                    class="form-text custom-invalid-feedback">Field is required</small>
+                            </div>
+                            </div>
+    
+                    
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="pincodeText">Pincode:</label>
+                            <input type="text"
+                                [ngClass]="{'form-control': true,
+                                'is-invalid': !pincode.valid && pincode.touched,
+                                'is-valid': pincode.valid}"
+                                formControlName="pincode" id="pincodeText" placeholder="Enter pincode">
+                            <small *ngIf="pincode.errors?.required && pincode.touched" id="pincodeHelp"
+                                class="form-text custom-invalid-feedback">Field is required</small>
+                            <small *ngIf="pincode.errors?.pattern && pincode.touched" id="pincodeHelp"
+                                class="form-text custom-invalid-feedback">Pincode Should be 6 digits only.</small>
+                        </div>
+
+
+                    </div>
+                </div>
+                
+
+        
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+
+<div class="row">
+    <div class="col-4">
+            <label for="">Preference:</label>
+<select class="custom-select" (change)="changePreference($event)" formControlName="trainerpreference">
+ <option value="" disabled>Choose your preference:</option>
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="no">No</option> 
+</select></div>
+</div>
+            <!-- seperator -->
+            <div class="row">
+                <div class="col">
+                    <hr>
+                </div>
+            </div>
+
+
+
+<div class="row">
+    <div class="col">
+        <label>Physiotherepist:</label>
+<div class="row">
+<div class="col-2">
+<div>
+    <input id="yes" type="radio" value="yes" name="physiotherapist" formControlName="physiotherapist">
+    <label for=""> Yes</label>
+</div>
+</div>
+<div class="col-2">
+<div>
+    <input id="no" type="radio" value="no" name="physiotherapist" formControlName="physiotherapist">
+    <label for=""> No</label>
+</div>
+</div>
+</div>
+
+        </div>
+    </div>
+
+        <!-- seperator -->
+        <div class="row">
+            <div class="col">
+                <hr>
+            </div>
+        </div>
+
+<div class="row">
+    <div class="col-4">
+        <label for="">Packages:</label>
+        <select class="custom-select" (change)="changePackages($event)" formControlName="packages">
+            <option value="" disabled>Choose your package:</option>
+            <option value="500">Rs.500 only for 1 month (Monthly Package)</option>
+            <option value="1200">Rs.1200 only for 4 months (Quarterly Package)</option>
+            <option value="41000">Rs.41000 only for 4 months (Yearly Package)</option>
+        </select></div>
+
+    </div>
+            <!-- seperator -->
+            <div class="row">
+                <div class="col">
+                    <hr>
+                </div>
+            </div>
+    
+<div class="row">
+    <div class='col-3'>
+    <label for="">inr:</label> <input type="text" formControlName="inr"  id="inrfield" name="inrfield" /> </div>
+    
+    <div class='col-3'>
+        <label for="">paisa:</label> <input type="text" formControlName="paisa" id="paisafield" name="paisafield"/>   
+  
+   </div>   
+</div><br/>
+<!-- final action buttons  -->
+                <div class="row justify-content-center">
+                    <div class="col-2" *ngIf="this.addForm">
+                        <button type="button" [disabled]="!fitnessForm.valid" (click)="onSubmit()"
+                            class="btn btn-primary">Place Appointment</button>
+                    </div>
+                    <div class="col-2" *ngIf="this.editForm">
+                        <button type="button" [disabled]="!fitnessForm.valid" (click)="onSubmit()"
+                            class="btn btn-primary">Update Appointment</button>
+                    </div>
+               
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
